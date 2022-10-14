@@ -8,6 +8,67 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="navbar">
+            <img src="./image/logo.jpeg" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Office</a></li>
+                    <li><a href="">Hotels</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
+            </nav>
+          <img src="./image/menu.png" class="menu-icon">
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="text-box">
+                    <h5>Our Products</h5>
+                    <h1>  Simplicity <br> is the  ultimate </br>
+                        sophistication
+                    </h1>
+                </div>
+            </div>
+            <div class="col">
+                <div class="gallery-box">
+                    <img src="./image/5.jpg" id="gallery">
+                    <ul>
+                        <li class="btn">01</li>
+                        <li class="btn active">02</li>
+                        <li class="btn">03</li>
+                        <li class="btn">04</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>    
+
+<script>
+    var btn = document.getElementsByClassName("btn");
+    var gallery = document.getElementById("gallery");
+
+    var image = new Array(
+        "./image/1.jpg",
+        "./image/2.jpg",
+        "./image/3.jpg",
+        "./image/4.jpg",
+
+    );
+    for(let i=0; i<btn.length; i++){
+        btn[i].onclick = function(){
+            gallery.src = image[i];
+            let current = document .getElementsByClassName("active");
+            current[0].className = current[0].className.replace("active", "");
+            this.className += " active";
+        };
+    }
+</script>
+
+
+
+
 </body>
 </html>
